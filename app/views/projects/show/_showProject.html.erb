@@ -1,0 +1,22 @@
+<div class="text-center">
+    <div class="text-muted">
+        <small>
+            Created by: <%= User.with_role(:creator, project)[0][:name] %>
+        </small>
+    </div>
+    <div class="mt-1">
+        <h3><%= project.name %></h3>
+    </div>
+    
+</div> 
+<div class="text-center">
+    <div class="text-muted">
+        <small>Description:</small>
+    </div>
+    <div class="mt-2">
+        <h4><%= project.description %></h4>
+    </div>
+</div>
+<div>
+    <%= render "projects/show/showProjectTable", members: members %>
+</div>

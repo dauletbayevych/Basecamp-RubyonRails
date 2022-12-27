@@ -1,0 +1,16 @@
+<%= form_for :member, url: project_members_path(params[:id]) do |form| %>
+    <div class="field mt-5">
+        <%= form.label :email, style: "display: block" %>
+        <%= form.text_field :email, :required => true, class: "form-control" %>
+        <div class="form-check form-switch">
+            <%= form.check_box :is_admin, class: "form-check-input"%>
+            <%= form.label "Admin", class: "form-check-label" %>
+        </div>
+
+    <div class="d-flex text-center justify-content-between">
+        <%= form.submit "Add Member", :class => 'btn btn-dark' %>
+        <%= link_to "Show Members", project_members_path(params[:id]), class: "btn btn-dark ml-5" %>
+    </div>
+<% end %>
+
+

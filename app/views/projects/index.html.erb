@@ -1,0 +1,19 @@
+<% content_for :title do %>
+    Projects
+<% end %>
+<div class="border rounded mt-5">  
+
+    <div class="m-3"><h1>Projects</h1>
+    <% if @projects.empty? %>
+        <%= link_to  "Add Project", new_project_path, class: "btn btn-dark" %>
+    <% end %>
+    </div>
+
+    <div id="projects" class="row row-cols-2">
+
+    <% @projects.each do |project| %>
+        <%= render project %>
+    <% end %>
+    
+    </div>
+</div>

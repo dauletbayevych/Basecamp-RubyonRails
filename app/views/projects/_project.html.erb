@@ -1,0 +1,25 @@
+<div class="col" id="<%= dom_id project %>">
+    <div class="border m-3 rounded card">
+        <div class="p-3 bg-dark text-white rounded-top">
+            <strong>Name:</strong>
+            <%= project.name %><br/>
+            <strong>Created by:</strong>
+            <%= User.with_role(:creator, project)[0][:name] %>
+        </div>
+
+        <div class="descrition_item">
+            <div class="text-center bg-secondary">
+                <small class="form-text text-white">Description:</small><br/>
+            </div>
+            <div class="card-body scroll">
+                <p class="overflow-auto">
+                <%= project.description %>
+                </p>
+            </div>
+        </div>
+        <div class="p-3 bg-light text-dark  rounded-bottom">
+            <%= link_to "Show", project, class: "link-dark"%>
+            |&nbsp<%= link_to "Edit", edit_project_path(project.id), class: "link-dark"%>
+        </div>
+    </div>
+</div>

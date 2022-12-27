@@ -1,0 +1,20 @@
+<div class="text-muted">
+    <small>Members:</small>
+</div>
+    
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <% members.each do |item| %>
+        <tbody>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.email %></td>
+            </tr>
+        </tbody>
+    <% end %>
+</table>

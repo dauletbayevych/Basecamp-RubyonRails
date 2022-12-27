@@ -1,0 +1,19 @@
+<div class="d-flex align-items-center">
+    <%= form_for :destroy, url: members_destroy_path, method: :delete do |form| %>
+        <%= form.hidden_field  :id, value: item.id %>
+        <%= form.hidden_field  :project_id, value: params[:project_id]%>
+        <%= form.submit "Delete", class: "btn btn-danger", style: "margin-right: 10px;" %>
+    <% end %>
+    <%= form_for :changeRole, url: members_edit_path, method: :post do |form| %>
+        <%= form.hidden_field  :id, value: item.id,  class: "form-control" %>
+        <%= form.hidden_field  :project_id, value: params[:project_id]%>
+        <div class="form-check form-switch">
+            <% if item.has_role? :member, Project.find(params[:project_id])%>
+                <%= form.check_box :is_admin, class: "form-check-input", onchange: "this.form.submit();"%>
+            <% else %>
+                <%= form.check_box :is_admin, checked: true ,class: "form-check-input", onchange: "this.form.submit();"%>
+            <% end %>
+            <%= form.label "Admin", class: "form-check-label" %>
+        </div>
+    <% end %>
+</div>

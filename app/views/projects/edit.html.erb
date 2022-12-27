@@ -1,0 +1,18 @@
+<% content_for :title do %>
+    Project&nbsp№<%=params[:id]%>&nbspEdit
+<% end %>
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-6 from">
+        <div class="text-center">
+            <h1>Editing project</h1>
+        </div>
+
+        <%= render "form", project: @project %>
+        <%= render "members/form"%>
+
+        <div class="">
+            <%= link_to "Back to projects", projects_path, class: "link-dark" %>
+            <%= link_to "Show Members", "/projects/#{params[:id]}/members", class: "link-dark" %>
+        </div>
+    </div>
+</div>

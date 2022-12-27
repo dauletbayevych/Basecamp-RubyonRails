@@ -1,0 +1,8 @@
+<div class="form-check form-switch">
+    <% if item.has_role? :member, Project.find(params[:project_id])%>
+        <%= form.check_box :is_admin, class: "form-check-input", onchange: "this.form.submit();"%>
+    <% else %>
+        <%= form.check_box :is_admin, checked: true ,class: "form-check-input", onchange: "this.form.submit();"%>
+    <% end %>
+    <%= form.label "Admin", class: "form-check-label" %>
+</div>
