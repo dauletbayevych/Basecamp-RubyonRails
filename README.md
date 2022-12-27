@@ -20,6 +20,9 @@
             gem 'tzinfo-data'
             gem 'devise'
             gem 'nested_scaffold'
+## Installation
+          bundle install
+          rails s
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
